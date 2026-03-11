@@ -5,22 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>重庆旅游攻略</title>
     <style>
-        :root {
-            --primary: #FF2442;
-            --primary-light: #FF6B7A;
-            --pink-light: #FFF0F3;
-            --pink-bg: #FFFAFB;
-            --white: #FFFFFF;
-            --text-dark: #333333;
-            --text-gray: #666666;
-            --text-light: #999999;
-            --border: #FFE4E8;
-            --shadow: 0 4px 16px rgba(255, 36, 66, 0.06);
-            --radius-lg: 18px;
-            --radius-md: 12px;
-            --radius-sm: 8px;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -29,652 +13,331 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-            background: linear-gradient(180deg, #FFFAFB 0%, #FFFFFF 100%);
-            color: var(--text-dark);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-            padding-bottom: 40px;
+            background: #FFFFFF;
+            color: #222222;
+            line-height: 1.6;
+            padding: 20px 15px;
         }
 
-        .container {
-            padding: 24px 16px;
+        h1 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
         }
 
-        /* Cover */
-        .cover {
-            position: relative;
-            margin-bottom: 30px;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow);
+        h2 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 25px 0 12px 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 6px;
         }
 
-        .cover img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-            display: block;
+        h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 15px 0 8px 0;
         }
 
-        .cover-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 24px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.6));
-        }
-
-        .cover-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #FFFFFF;
+        p {
             margin-bottom: 8px;
         }
 
-        .cover-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
+        ul, ol {
+            margin-left: 18px;
+            margin-bottom: 12px;
         }
 
-        .cover-tag {
-            background: var(--primary);
-            color: #FFFFFF;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 11px;
+        li {
+            margin-bottom: 6px;
         }
 
-        /* Section */
-        .section {
-            margin-bottom: 36px;
+        .subtitle {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 15px;
         }
 
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 18px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--border);
-        }
-
-        .section-icon {
-            font-size: 20px;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        /* Day Card */
-        .day-card {
-            background: var(--white);
-            border-radius: var(--radius-md);
-            padding: 18px;
-            margin-bottom: 14px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-
-        .day-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px dashed var(--border);
-        }
-
-        .day-badge {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: #FFFFFF;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 11px;
-            font-weight: 600;
+        .day-section {
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ddd;
         }
 
         .day-title {
-            font-size: 14px;
             font-weight: 600;
-        }
-
-        .day-subtitle {
-            font-size: 12px;
-            color: var(--text-light);
-        }
-
-        /* Spot List */
-        .spot-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
+            margin-bottom: 10px;
+            font-size: 15px;
         }
 
         .spot-item {
-            display: flex;
-            gap: 10px;
-            padding: 12px 0;
-            border-bottom: 1px solid #FAFAFA;
-        }
-
-        .spot-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .spot-item:first-child {
-            padding-top: 0;
-        }
-
-        .spot-num {
-            width: 22px;
-            height: 22px;
-            background: var(--pink-light);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-
-        .spot-content {
-            flex: 1;
+            margin-bottom: 10px;
+            padding-left: 8px;
         }
 
         .spot-name {
-            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 3px;
+            font-size: 14px;
         }
 
         .spot-meta {
+            color: #555;
             font-size: 12px;
-            color: var(--primary);
-            margin-bottom: 3px;
         }
 
         .spot-desc {
-            font-size: 12px;
-            color: var(--text-gray);
-        }
-
-        /* Gallery */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin: 16px 0;
-        }
-
-        .gallery img {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            border-radius: var(--radius-sm);
-        }
-
-        .gallery img.main {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-
-        /* Tips Card */
-        .tips-card {
-            background: linear-gradient(135deg, var(--pink-bg) 0%, var(--pink-light) 100%);
-            border-radius: var(--radius-md);
-            padding: 18px;
-            margin: 16px 0;
-            border-left: 4px solid var(--primary);
-        }
-
-        .tips-list {
-            list-style: none;
-        }
-
-        .tips-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 36, 66, 0.08);
+            color: #444;
             font-size: 13px;
-            line-height: 1.6;
         }
 
-        .tips-list li:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .tips-list li:first-child {
-            padding-top: 0;
-        }
-
-        .tips-list strong {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* Food Grid */
-        .food-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin: 16px 0;
-        }
-
-        .food-card {
-            background: var(--white);
-            border-radius: var(--radius-md);
-            padding: 16px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-
-        .food-card h4 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .food-list {
-            list-style: none;
-        }
-
-        .food-list li {
-            padding: 6px 0;
-            font-size: 13px;
-            color: var(--text-gray);
-            border-bottom: 1px dashed #F0F0F0;
-        }
-
-        .food-list li:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        /* Info Box */
-        .info-box {
-            background: var(--white);
-            border-radius: var(--radius-md);
-            padding: 16px;
+        .tips-box {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 12px;
             margin: 12px 0;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
+        }
+
+        .info-box {
+            border: 1px solid #ddd;
+            padding: 12px;
+            margin: 12px 0;
         }
 
         .info-box h4 {
             font-size: 13px;
             font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .info-list {
-            list-style: none;
-        }
-
-        .info-list li {
-            padding: 6px 0;
-            font-size: 13px;
-            color: var(--text-gray);
-            border-bottom: 1px dashed #F0F0F0;
-        }
-
-        .info-list li:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        /* Note */
-        .note {
-            background: linear-gradient(135deg, #FFF9E6 0%, #FFF3CD 100%);
-            border-radius: var(--radius-sm);
-            padding: 12px 16px;
-            margin: 12px 0;
-            font-size: 13px;
-            color: #856404;
-            border-left: 4px solid #FFC107;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 40px 0 20px;
-            margin-top: 30px;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-heart {
-            font-size: 20px;
             margin-bottom: 8px;
         }
 
-        .footer-text {
-            font-size: 14px;
-            color: var(--text-gray);
+        .note {
+            background: #fffbea;
+            border-left: 3px solid #f0ad4e;
+            padding: 8px 12px;
+            margin: 12px 0;
+            font-size: 13px;
         }
 
-        .footer-sub {
-            font-size: 12px;
-            color: var(--text-light);
-            margin-top: 6px;
+        .gallery {
+            margin: 15px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            margin: 5px 0;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            color: #666;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Cover -->
-    <div class="cover">
-        <img src="IMG_2916.PNG" alt="重庆旅游">
-        <div class="cover-overlay">
-            <h1 class="cover-title">🌶️ 重庆3天2夜</h1>
-            <div class="cover-tags">
-                <span class="cover-tag">#重庆旅游</span>
-                <span class="cover-tag">#山城攻略</span>
-            </div>
-        </div>
-    </div>
+<h1>🌶️ 重庆 3 天 2 夜</h1>
+<p class="subtitle">#重庆旅游 #山城攻略</p>
 
-    <!-- Gallery -->
-    <div class="gallery">
-        <img src="IMG_2917.PNG" class="main" alt="Day1">
-        <img src="IMG_2918.PNG" alt="Day2">
-        <img src="IMG_2919.PNG" alt="Day3">
-        <img src="IMG_2922.PNG" alt="美食">
-    </div>
-
-    <!-- Itinerary -->
-    <section class="section">
-        <div class="section-header">
-            <span class="section-icon">📅</span>
-            <h2 class="section-title">行程规划</h2>
-        </div>
-
-        <div class="day-card">
-            <div class="day-header">
-                <span class="day-badge">Day 1</span>
-                <div>
-                    <div class="day-title">渝中区 · 经典山城步道与夜景</div>
-                </div>
-            </div>
-            <div class="spot-list">
-                <div class="spot-item">
-                    <span class="spot-num">1</span>
-                    <div class="spot-content">
-                        <div class="spot-name">山城步道</div>
-                        <div class="spot-meta">🆓 免费 · 地铁1号线七星岗站</div>
-                        <div class="spot-desc">临崖栈道，俯瞰长江，夜晚红灯笼亮起超美</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num">2</span>
-                    <div class="spot-content">
-                        <div class="spot-name">十八梯</div>
-                        <div class="spot-meta">🆓 免费 · 地铁1号线较场口站步行10分钟</div>
-                        <div class="spot-desc">吊脚楼错落，出片率极高</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num">3</span>
-                    <div class="spot-content">
-                        <div class="spot-name">解放碑</div>
-                        <div class="spot-meta">🆓 免费 · 地铁2号线临江门站步行13分钟</div>
-                        <div class="spot-desc">抗战胜利纪念碑</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num">4</span>
-                    <div class="spot-content">
-                        <div class="spot-name">戴家巷</div>
-                        <div class="spot-meta">🆓 免费 · 地铁2号线临江门站步行11分钟</div>
-                        <div class="spot-desc">百年老街，崖壁步道</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num">5</span>
-                    <div class="spot-content">
-                        <div class="spot-name">洪崖洞</div>
-                        <div class="spot-meta">🆓 免费 · 地铁2号线临江门站</div>
-                        <div class="spot-desc">吊脚楼夜景，现实版《千与千寻》</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="day-card">
-            <div class="day-header">
-                <span class="day-badge" style="background: linear-gradient(135deg, #81B29A 0%, #5A9A7A 100%);">Day 2</span>
-                <div>
-                    <div class="day-title">南岸区 · 南岸老街与江景</div>
-                </div>
-            </div>
-            <div class="spot-list">
-                <div class="spot-item">
-                    <span class="spot-num" style="background: #E8F5E9; color: #4CAF50;">1</span>
-                    <div class="spot-content">
-                        <div class="spot-name">两江小渡</div>
-                        <div class="spot-meta">💰 15元 · 地铁2号线临江门站</div>
-                        <div class="spot-desc">20分钟航程串联嘉陵江与长江</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num" style="background: #E8F5E9; color: #4CAF50;">2</span>
-                    <div class="spot-content">
-                        <div class="spot-name">弹子石老街</div>
-                        <div class="spot-meta">🆓 免费 · 地铁环线弹子石站</div>
-                        <div class="spot-desc">重庆开埠记忆，傍晚江风配夜景</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num" style="background: #E8F5E9; color: #4CAF50;">3</span>
-                    <div class="spot-content">
-                        <div class="spot-name">钟楼广场</div>
-                        <div class="spot-meta">🆓 免费 · 地铁环线涂山站步行8分钟</div>
-                        <div class="spot-desc">欧式钟楼，两江交汇观景位</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num" style="background: #E8F5E9; color: #4CAF50;">4</span>
-                    <div class="spot-content">
-                        <div class="spot-name">下浩里老街</div>
-                        <div class="spot-meta">🆓 免费 · 地铁6号线上新街站步行15分钟</div>
-                        <div class="spot-desc">历史建筑+文艺小店，夜景绝美</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num" style="background: #E8F5E9; color: #4CAF50;">5</span>
-                    <div class="spot-content">
-                        <div class="spot-name">龙门浩老街</div>
-                        <div class="spot-meta">🆓 免费 · 地铁2号线上新街站步行5分钟</div>
-                        <div class="spot-desc">老吊脚楼叠历史建筑</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="day-card">
-            <div class="day-header">
-                <span class="day-badge" style="background: linear-gradient(135deg, #7C9ECF 0%, #5A7CAF 100%);">Day 3</span>
-                <div>
-                    <div class="day-title">文化地标与魔幻交通</div>
-                </div>
-            </div>
-            <div class="spot-list">
-                <div class="spot-item">
-                    <span class="spot-num" style="background: #E3F2FD; color: #1976D2;">1</span>
-                    <div class="spot-content">
-                        <div class="spot-name">三峡博物馆</div>
-                        <div class="spot-meta">🆓 免费 · 地铁2号线曾家岩站</div>
-                        <div class="spot-desc">《壮丽三峡》专题展</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num" style="background: #E3F2FD; color: #1976D2;">2</span>
-                    <div class="spot-content">
-                        <div class="spot-name">人民大礼堂</div>
-                        <div class="spot-meta">💰 8元 · 地铁2号线曾家岩站步行15分钟</div>
-                        <div class="spot-desc">仿明清宫殿建筑，金顶绿瓦</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num" style="background: #E3F2FD; color: #1976D2;">3</span>
-                    <div class="spot-content">
-                        <div class="spot-name">李子坝</div>
-                        <div class="spot-meta">🆓 免费 · 地铁2号线李子坝站</div>
-                        <div class="spot-desc">轻轨穿楼，8D魔幻山城</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num" style="background: #E3F2FD; color: #1976D2;">4</span>
-                    <div class="spot-content">
-                        <div class="spot-name">观音桥</div>
-                        <div class="spot-meta">🆓 免费 · 地铁3号线观音桥站</div>
-                        <div class="spot-desc">重庆"曼哈顿"，九街夜生活</div>
-                    </div>
-                </div>
-                <div class="spot-item">
-                    <span class="spot-num" style="background: #E3F2FD; color: #1976D2;">5</span>
-                    <div class="spot-content">
-                        <div class="spot-name">北仓文创</div>
-                        <div class="spot-meta">🆓 免费 · 地铁3号线观音桥站步行10分钟</div>
-                        <div class="spot-desc">老巷+文艺小店</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tips -->
-    <section class="section">
-        <div class="section-header">
-            <span class="section-icon">⚠️</span>
-            <h2 class="section-title">必打卡 Tips</h2>
-        </div>
-        <div class="tips-card">
-            <ul class="tips-list">
-                <li><strong>洪崖洞</strong> — 最佳视角在对岸大剧院江边</li>
-                <li><strong>李子坝</strong> — 去新都巷观景台，人少能拍完整</li>
-                <li><strong>鹅岭二厂</strong> — 往天台走拍山城全景，傍晚去</li>
-                <li><strong>弹子石老街</strong> — 傍晚去「长嘉汇观景台」</li>
-                <li><strong>长江索道</strong> — 买单程，从南岸上新街排队人少</li>
-                <li><strong>三峡博物馆</strong> — 周一闭馆，提前预约</li>
-                <li><strong>重庆动物园</strong> — 看熊猫早上早去</li>
-                <li><strong>磁器口</strong> — 商业化重，建议去山城步道</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Food -->
-    <section class="section">
-        <div class="section-header">
-            <span class="section-icon">🍜</span>
-            <h2 class="section-title">美食推荐</h2>
-        </div>
-
-        <div class="gallery">
-            <img src="IMG_2922.PNG" alt="美食">
-            <img src="IMG_2923.PNG" alt="美食">
-            <img src="IMG_2924.PNG" alt="美食">
-        </div>
-
-        <div class="food-grid">
-            <div class="food-card">
-                <h4>🔥 火锅 & 江湖菜</h4>
-                <ul class="food-list">
-                    <li>旺四海渣渣牛肉 — 又麻又辣</li>
-                    <li>重庆人家火锅 — 20年老火锅</li>
-                    <li>席大妹鲜货老火锅 — 手工炒料</li>
-                    <li>晓彭肥肠鸡 — 5年必吃榜</li>
-                    <li>老甘家江湖菜小龙虾 — 6年必吃榜</li>
-                </ul>
-            </div>
-            <div class="food-card">
-                <h4>🍵 小吃 & 饮品</h4>
-                <ul class="food-list">
-                    <li>李若桃·手作酸奶铺</li>
-                    <li>味加味面馆</li>
-                    <li>Eat Me Brunch</li>
-                    <li>暹罗之屿·泰式按摩</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Transport -->
-    <section class="section">
-        <div class="section-header">
-            <span class="section-icon">🚇</span>
-            <h2 class="section-title">交通指南</h2>
-        </div>
-
-        <div class="info-box">
-            <h4>✈️ 抵达重庆</h4>
-            <ul class="info-list">
-                <li><strong>江北机场</strong> — 地铁10号线直达</li>
-                <li><strong>重庆北站</strong> — 地铁10号线转2号线</li>
-                <li><strong>重庆西站</strong> — 地铁环线换乘2号线</li>
-                <li><strong>沙坪坝站</strong> — 地铁1号线直达</li>
-            </ul>
-        </div>
-
-        <div class="info-box">
-            <h4>🚌 市内出行</h4>
-            <ul class="info-list">
-                <li><strong>轻轨/地铁</strong> — 最便捷，扫码乘车</li>
-                <li><strong>出租车</strong> — 白天10元</li>
-                <li><strong>网约车</strong> — 平台定价更透明</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Accommodation -->
-    <section class="section">
-        <div class="section-header">
-            <span class="section-icon">🏨</span>
-            <h2 class="section-title">住宿建议</h2>
-        </div>
-
-        <div class="info-box">
-            <ul class="info-list">
-                <li><strong>解放碑/观音桥</strong> — 交通方便，但节假日贵</li>
-                <li><strong>南坪/沙坪坝</strong> — 性价比高</li>
-            </ul>
-        </div>
-        <div class="note">💡 订房贴士：多翻真实评价，提前预订</div>
-    </section>
-
-    <!-- Notes -->
-    <section class="section">
-        <div class="section-header">
-            <span class="section-icon">📋</span>
-            <h2 class="section-title">注意事项</h2>
-        </div>
-
-        <div class="tips-card">
-            <ul class="tips-list">
-                <li><strong>👟 鞋子</strong> — 山城爬坡多，穿舒适运动鞋</li>
-                <li><strong>🌂 雨具</strong> — 天气变脸快，带晴雨伞</li>
-                <li><strong>🪪 证件</strong> — 学生证别忘！半价优惠</li>
-                <li><strong>📱 导航</strong> — 多问本地人更靠谱</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-heart">💕</div>
-        <p class="footer-text">祝你在重庆玩得开心！</p>
-        <p class="footer-sub">山城的浪漫 🌶️</p>
-    </footer>
+<!-- Gallery -->
+<div class="gallery">
+    <img src="IMG_2916.PNG" alt="重庆旅游封面">
 </div>
+
+<!-- Itinerary -->
+<h2>📅 行程规划</h2>
+
+<div class="day-section">
+    <div class="day-title">Day 1 · 渝中区 · 经典山城步道与夜景</div>
+    
+    <ol>
+        <li class="spot-item">
+            <div class="spot-name">山城步道</div>
+            <div class="spot-meta">🆓 免费 · 地铁 1 号线七星岗站</div>
+            <div class="spot-desc">临崖栈道，俯瞰长江，夜晚红灯笼亮起超美</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">十八梯</div>
+            <div class="spot-meta">🆓 免费 · 地铁 1 号线较场口站步行 10 分钟</div>
+            <div class="spot-desc">吊脚楼错落，出片率极高</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">解放碑</div>
+            <div class="spot-meta">🆓 免费 · 地铁 2 号线临江门站步行 13 分钟</div>
+            <div class="spot-desc">抗战胜利纪念碑</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">戴家巷</div>
+            <div class="spot-meta">🆓 免费 · 地铁 2 号线临江门站步行 11 分钟</div>
+            <div class="spot-desc">百年老街，崖壁步道</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">洪崖洞</div>
+            <div class="spot-meta">🆓 免费 · 地铁 2 号线临江门站</div>
+            <div class="spot-desc">吊脚楼夜景，现实版《千与千寻》</div>
+        </li>
+    </ol>
+</div>
+
+<div class="day-section">
+    <div class="day-title">Day 2 · 南岸区 · 南岸老街与江景</div>
+    
+    <ol>
+        <li class="spot-item">
+            <div class="spot-name">两江小渡</div>
+            <div class="spot-meta">💰 15 元 · 地铁 2 号线临江门站</div>
+            <div class="spot-desc">20 分钟航程串联嘉陵江与长江</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">弹子石老街</div>
+            <div class="spot-meta">🆓 免费 · 地铁环线弹子石站</div>
+            <div class="spot-desc">重庆开埠记忆，傍晚江风配夜景</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">钟楼广场</div>
+            <div class="spot-meta">🆓 免费 · 地铁环线涂山站步行 8 分钟</div>
+            <div class="spot-desc">欧式钟楼，两江交汇观景位</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">下浩里老街</div>
+            <div class="spot-meta">🆓 免费 · 地铁 6 号线上新街站步行 15 分钟</div>
+            <div class="spot-desc">历史建筑 + 文艺小店，夜景绝美</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">龙门浩老街</div>
+            <div class="spot-meta">🆓 免费 · 地铁 2 号线上新街站步行 5 分钟</div>
+            <div class="spot-desc">老吊脚楼叠历史建筑</div>
+        </li>
+    </ol>
+</div>
+
+<div class="day-section">
+    <div class="day-title">Day 3 · 文化地标与魔幻交通</div>
+    
+    <ol>
+        <li class="spot-item">
+            <div class="spot-name">三峡博物馆</div>
+            <div class="spot-meta">🆓 免费 · 地铁 2 号线曾家岩站</div>
+            <div class="spot-desc">《壮丽三峡》专题展</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">人民大礼堂</div>
+            <div class="spot-meta">💰 8 元 · 地铁 2 号线曾家岩站步行 15 分钟</div>
+            <div class="spot-desc">仿明清宫殿建筑，金顶绿瓦</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">李子坝</div>
+            <div class="spot-meta">🆓 免费 · 地铁 2 号线李子坝站</div>
+            <div class="spot-desc">轻轨穿楼，8D 魔幻山城</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">观音桥</div>
+            <div class="spot-meta">🆓 免费 · 地铁 3 号线观音桥站</div>
+            <div class="spot-desc">重庆"曼哈顿"，九街夜生活</div>
+        </li>
+        <li class="spot-item">
+            <div class="spot-name">北仓文创</div>
+            <div class="spot-meta">🆓 免费 · 地铁 3 号线观音桥站步行 10 分钟</div>
+            <div class="spot-desc">老巷 + 文艺小店</div>
+        </li>
+    </ol>
+</div>
+
+<!-- Tips -->
+<h2>⚠️ 必打卡 Tips</h2>
+<div class="tips-box">
+    <ul>
+        <li><strong>洪崖洞</strong> — 最佳视角在对岸大剧院江边</li>
+        <li><strong>李子坝</strong> — 去新都巷观景台，人少能拍完整</li>
+        <li><strong>鹅岭二厂</strong> — 往天台走拍山城全景，傍晚去</li>
+        <li><strong>弹子石老街</strong> — 傍晚去「长嘉汇观景台」</li>
+        <li><strong>长江索道</strong> — 买单程，从南岸上新街排队人少</li>
+        <li><strong>三峡博物馆</strong> — 周一闭馆，提前预约</li>
+        <li><strong>重庆动物园</strong> — 看熊猫早上早去</li>
+        <li><strong>磁器口</strong> — 商业化重，建议去山城步道</li>
+    </ul>
+</div>
+
+<!-- Food -->
+<h2>🍜 美食推荐</h2>
+
+<div class="gallery">
+    <img src="IMG_2922.PNG" alt="美食">
+    <img src="IMG_2923.PNG" alt="美食">
+    <img src="IMG_2924.PNG" alt="美食">
+</div>
+
+<h3>🔥 火锅 & 江湖菜</h3>
+<ul>
+    <li>旺四海渣渣牛肉 — 又麻又辣</li>
+    <li>重庆人家火锅 — 20 年老火锅</li>
+    <li>席大妹鲜货老火锅 — 手工炒料</li>
+    <li>晓彭肥肠鸡 — 5 年必吃榜</li>
+    <li>老甘家江湖菜小龙虾 — 6 年必吃榜</li>
+</ul>
+
+<h3>🍵 小吃 & 饮品</h3>
+<ul>
+    <li>李若桃·手作酸奶铺</li>
+    <li>味加味面馆</li>
+    <li>Eat Me Brunch</li>
+    <li>暹罗之屿·泰式按摩</li>
+</ul>
+
+<!-- Transport -->
+<h2>🚇 交通指南</h2>
+
+<div class="info-box">
+    <h4>✈️ 抵达重庆</h4>
+    <ul>
+        <li><strong>江北机场</strong> — 地铁 10 号线直达</li>
+        <li><strong>重庆北站</strong> — 地铁 10 号线转 2 号线</li>
+        <li><strong>重庆西站</strong> — 地铁环线换乘 2 号线</li>
+        <li><strong>沙坪坝站</strong> — 地铁 1 号线直达</li>
+    </ul>
+</div>
+
+<div class="info-box">
+    <h4>🚌 市内出行</h4>
+    <ul>
+        <li><strong>轻轨/地铁</strong> — 最便捷，扫码乘车</li>
+        <li><strong>出租车</strong> — 白天 10 元</li>
+        <li><strong>网约车</strong> — 平台定价更透明</li>
+    </ul>
+</div>
+
+<!-- Accommodation -->
+<h2>🏨 住宿建议</h2>
+
+<div class="info-box">
+    <ul>
+        <li><strong>解放碑/观音桥</strong> — 交通方便，但节假日贵</li>
+        <li><strong>南坪/沙坪坝</strong> — 性价比高</li>
+    </ul>
+</div>
+<div class="note">💡 订房贴士：多翻真实评价，提前预订</div>
+
+<!-- Notes -->
+<h2>📋 注意事项</h2>
+
+<div class="tips-box">
+    <ul>
+        <li><strong>👟 鞋子</strong> — 山城爬坡多，穿舒适运动鞋</li>
+        <li><strong>🌂 雨具</strong> — 天气变脸快，带晴雨伞</li>
+        <li><strong>🪪 证件</strong> — 学生证别忘！半价优惠</li>
+        <li><strong>📱 导航</strong> — 多问本地人更靠谱</li>
+    </ul>
+</div>
+
+<footer>
+    <p>祝你在重庆玩得开心！</p>
+    <p>山城的浪漫 🌶️</p>
+</footer>
 
 </body>
 </html>
