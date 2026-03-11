@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重庆3天2夜旅游攻略</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #e94560 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            padding: 40px 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 标题区域 */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 50%, #fff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 60px rgba(255,255,255,0.3);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* 封面图 */
+        .cover-image {
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(233,69,96,0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .cover-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 60px rgba(233,69,96,0.3);
+        }
+
+        .cover-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* 玻璃卡片 */
+        .glass-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+        }
+
+        /* 章节标题 */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .section-icon {
+            font-size: 32px;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+        }
+
+        .section-title h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        /* 日期标签 */
+        .day-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .day-badge.day1 {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .day-badge.day2 {
+            background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+        }
+
+        .day-badge.day3 {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+
+        /* 景点列表 */
+        .spot-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .spot-item {
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .spot-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(5px);
+        }
+
+        .spot-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .spot-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .spot-price {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .spot-price.free {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+
+        .spot-meta {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 8px;
+        }
+
+        .spot-desc {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            font-style: italic;
+        }
+
+        /* 图片画廊 */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+
+        .image-gallery img.large {
+            grid-column: span 2;
+            grid-row: span 2;
+            height: 255px;
+        }
+
+        /* 提示卡片 */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .tip-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 20px;
+            border-left: 4px solid;
+            transition: all 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .tip-card.warning {
+            border-color: #f39c12;
+        }
+
+        .tip-card.food {
+            border-color: #e74c3c;
+        }
+
+        .tip-card.tips {
+            border-color: #3498db;
+        }
+
+        .tip-card h4 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tip-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tip-card li {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            line-height: 1.5;
+        }
+
+        .tip-card li:last-child {
+            border-bottom: none;
+        }
+
+        .tip-card li strong {
+            color: #fff;
+        }
+
+        /* 美食列表 */
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .food-item {
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .food-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+
+        .food-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .food-desc {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* 交通表格 */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .transport-item {
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .transport-item:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .transport-icon {
+            font-size: 28px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .transport-info h4 {
+            color: #fff;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .transport-info p {
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-text {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .footer-note {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* 动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glass-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .glass-card:nth-child(2) { animation-delay: 0.1s; }
+        .glass-card:nth-child(3) { animation-delay: 0.2s; }
+        .glass-card:nth-child(4) { animation-delay: 0.3s; }
+        .glass-card:nth-child(5) { animation-delay: 0.4s; }
+        .glass-card:nth-child(6) { animation-delay: 0.5s; }
+        .glass-card:nth-child(7) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 标题 -->
+    <div class="header">
+        <h1>🌶️ 重庆3天2夜旅游攻略 🐼</h1>
+        <div class="subtitle">一座来了就不想走的城市</div>
+    </div>
+
+    <!-- 封面图 -->
+    <div class="cover-image">
+        <img src="IMG_2916.PNG" alt="重庆封面">
+    </div>
+
+    <!-- 一、行程规划 -->
+    <div class="glass-card">
+        <div class="section-title">
+            <span class="section-icon">📍</span>
+            <h2>一、行程规划</h2>
+        </div>
+
+        <!-- Day 1 -->
+        <div class="day-badge day1">📅 Day 1：经典山城步道与夜景</div>
+        <div class="spot-list">
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">1. 山城步道</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁1号线七星岗站</div>
+                <div class="spot-desc">临崖栈道，俯瞰长江，夜晚红灯笼亮起超美</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">2. 十八梯</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁1号线较场口站（步行10分钟）</div>
+                <div class="spot-desc">吊脚楼错落，超出片</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">3. 解放碑</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁2号线临江门站（步行13分钟）</div>
+                <div class="spot-desc">抗战胜利纪念碑，周边商圈繁华</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">4. 戴家巷</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁2号线临江门站（步行11分钟）</div>
+                <div class="spot-desc">百年老街，崖壁步道，赏江景</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">5. 洪崖洞</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁2号线临江门站</div>
+                <div class="spot-desc">吊脚楼夜景如梦幻世界</div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-badge day2" style="margin-top: 30px;">📅 Day 2：南岸老街与江景</div>
+        <div class="spot-list">
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">1. 两江小渡</span>
+                    <span class="spot-price">15元</span>
+                </div>
+                <div class="spot-meta">🚇 地铁2号线临江门站</div>
+                <div class="spot-desc">20分钟航程逛嘉陵江+长江</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">2. 弹子石老街</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁环线弹子石站</div>
+                <div class="spot-desc">重庆开埠记忆，傍晚江风配夜景</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">3. 钟楼广场</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁环线涂山站（步行8分钟）</div>
+                <div class="spot-desc">欧式钟楼，两江景，王源同款甜甜圈</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">4. 下浩里</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁6号线上新街站（步行15分钟）</div>
+                <div class="spot-desc">历史建筑+文艺小店，绝美夜景</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">5. 龙门浩</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁2号线上新街站（步行5分钟）</div>
+                <div class="spot-desc">老吊脚楼叠历史建筑，抬头就是江景</div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-badge day3" style="margin-top: 30px;">📅 Day 3：文化地标与魔幻交通</div>
+        <div class="spot-list">
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">1. 三峡博物馆</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁2号线曾家岩站</div>
+                <div class="spot-desc">《壮丽三峡》展，巴渝老物件</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">2. 人民大礼堂</span>
+                    <span class="spot-price">8元</span>
+                </div>
+                <div class="spot-meta">🚇 地铁2号线曾家岩站（15分钟）</div>
+                <div class="spot-desc">仿明清宫殿建筑，金顶绿瓦</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">3. 李子坝</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁2号线李子坝站（10分钟）</div>
+                <div class="spot-desc">轻轨穿楼，8D魔幻山城</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">4. 观音桥</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁3号线观音桥站（20分钟）</div>
+                <div class="spot-desc">重庆曼哈顿机位，九街夜生活</div>
+            </div>
+            <div class="spot-item">
+                <div class="spot-header">
+                    <span class="spot-name">5. 北仓文创</span>
+                    <span class="spot-price free">免费</span>
+                </div>
+                <div class="spot-meta">🚇 地铁3号线观音桥站（步行10分钟）</div>
+                <div class="spot-desc">老巷+文艺小店</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 行程图片 -->
+    <div class="image-gallery">
+        <img src="IMG_2917.PNG" alt="Day1">
+        <img src="IMG_2918.PNG" alt="Day2">
+        <img src="IMG_2919.PNG" alt="Day3">
+    </div>
+
+    <!-- 二、必打卡景点 Tips -->
+    <div class="glass-card">
+        <div class="section-title">
+            <span class="section-icon">⚠️</span>
+            <h2>二、必打卡景点 Tips</h2>
+        </div>
+        <div class="tips-grid">
+            <div class="tip-card warning">
+                <h4>💡 避坑指南</h4>
+                <ul>
+                    <li><strong>洪崖洞：</strong>最佳视角在对面大剧院江边或千厮门大桥</li>
+                    <li><strong>李子坝：</strong>去新都巷观景台，人少能拍完整画面</li>
+                    <li><strong>鹅岭二厂：</strong>往天台走拍山城全景+长江，傍晚去</li>
+                    <li><strong>弹子石老街：</strong>傍晚去"长嘉汇观景台"</li>
+                </ul>
+            </div>
+            <div class="tip-card warning">
+                <h4>📌 实用提醒</h4>
+                <ul>
+                    <li><strong>长江索道：</strong>买单程，从南岸上新街排队人少一半</li>
+                    <li><strong>三峡博物馆：</strong>周一闭馆，提前预约</li>
+                    <li><strong>重庆动物园：</strong>看熊猫早上早去，避开11:00-13:00</li>
+                    <li><strong>磁器口：</strong>商业化重，想感受老重庆去山城步道</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 三、美食推荐 -->
+    <div class="glass-card">
+        <div class="section-title">
+            <span class="section-icon">🍜</span>
+            <h2>三、美食推荐</h2>
+        </div>
+
+        <div class="image-gallery">
+            <img src="IMG_2922.PNG" alt="美食1" class="large">
+            <img src="IMG_2923.PNG" alt="美食2">
+            <img src="IMG_2924.PNG" alt="美食3">
+        </div>
+
+        <h4 style="color: #fff; margin: 25px 0 15px; font-size: 18px;">🔥 火锅/江湖菜</h4>
+        <div class="food-grid">
+            <div class="food-item">
+                <div class="food-name">旺四海渣渣牛肉</div>
+                <div class="food-desc">又麻又辣</div>
+            </div>
+            <div class="food-item">
+                <div class="food-name">重庆人家火锅</div>
+                <div class="food-desc">20年老火锅</div>
+            </div>
+            <div class="food-item">
+                <div class="food-name">席大妹鲜货老火锅</div>
+                <div class="food-desc">手工炒料</div>
+            </div>
+            <div class="food-item">
+                <div class="food-name">邓公本味卤</div>
+                <div class="food-desc">民国老洋楼</div>
+            </div>
+            <div class="food-item">
+                <div class="food-name">晓彭肥肠鸡</div>
+                <div class="food-desc">5年必吃榜</div>
+            </div>
+            <div class="food-item">
+                <div class="food-name">老甘家江湖菜</div>
+                <div class="food-desc">6年必吃榜</div>
+            </div>
+        </div>
+
+        <h4 style="color: #fff; margin: 25px 0 15px; font-size: 18px;">🍵 小吃/饮品</h4>
+        <div class="food-grid">
+            <div class="food-item">
+                <div class="food-name">李若桃·手作酸奶</div>
+                <div class="food-desc">草莓桃儿白糯米</div>
+            </div>
+            <div class="food-item">
+                <div class="food-name">味加味面馆</div>
+                <div class="food-desc">乌冬汤和海鲜面</div>
+            </div>
+            <div class="food-item">
+                <div class="food-name">Eat Me Brunch</div>
+                <div class="food-desc">美式小院氛围</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 四、交通指南 -->
+    <div class="glass-card">
+        <div class="section-title">
+            <span class="section-icon">🚇</span>
+            <h2>四、交通指南</h2>
+        </div>
+
+        <div class="image-gallery">
+            <img src="IMG_2925.PNG" alt="交通" class="large">
+        </div>
+
+        <h4 style="color: #fff; margin: 20px 0 15px; font-size: 18px;">✈️ 抵达重庆</h4>
+        <div class="transport-grid">
+            <div class="transport-item">
+                <div class="transport-icon">✈️</div>
+                <div class="transport-info">
+                    <h4>飞机（江北机场）</h4>
+                    <p>地铁10号线 → 2号线到临江门</p>
+                </div>
+            </div>
+            <div class="transport-item">
+                <div class="transport-icon">🚄</div>
+                <div class="transport-info">
+                    <h4>重庆北站</h4>
+                    <p>地铁10号线 → 2号线到解放碑</p>
+                </div>
+            </div>
+            <div class="transport-item">
+                <div class="transport-icon">🚄</div>
+                <div class="transport-info">
+                    <h4>重庆西站</h4>
+                    <p>地铁环线 → 2号线到解放碑</p>
+                </div>
+            </div>
+            <div class="transport-item">
+                <div class="transport-icon">🚄</div>
+                <div class="transport-info">
+                    <h4>沙坪坝站</h4>
+                    <p>地铁1号线 → 较场口站</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 style="color: #fff; margin: 25px 0 15px; font-size: 18px;">🚌 市内出行</h4>
+        <div class="tips-grid">
+            <div class="tip-card tips">
+                <h4>🚇 轻轨/地铁</h4>
+                <ul>
+                    <li>最方便快捷</li>
+                    <li>搜索"重庆公共交通乘车码"扫码乘车</li>
+                </ul>
+            </div>
+            <div class="tip-card tips">
+                <h4>🚌 其他交通</h4>
+                <ul>
+                    <li>公交：全程2元，高峰期不建议</li>
+                    <li>出租车：白天10元，23:00后11元</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 五、住宿建议 -->
+    <div class="glass-card">
+        <div class="section-title">
+            <span class="section-icon">🏨</span>
+            <h2>五、住宿建议</h2>
+        </div>
+
+        <div class="image-gallery">
+            <img src="IMG_2926.PNG" alt="住宿" class="large">
+        </div>
+
+        <div class="tips-grid">
+            <div class="tip-card tips">
+                <h4>🌟 推荐区域</h4>
+                <ul>
+                    <li><strong>解放碑/观音桥：</strong>交通方便，但节假日贵</li>
+                    <li><strong>南坪/沙坪坝：</strong>性价比高，有烟火气</li>
+                </ul>
+            </div>
+            <div class="tip-card warning">
+                <h4>💡 订房提醒</h4>
+                <ul>
+                    <li>多翻真实住客评价</li>
+                    <li>别光看网红美照</li>
+                    <li>提前预订</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 六、注意事项 -->
+    <div class="glass-card">
+        <div class="section-title">
+            <span class="section-icon">📋</span>
+            <h2>六、注意事项</h2>
+        </div>
+
+        <div class="image-gallery">
+            <img src="IMG_2927.PNG" alt="注意" class="large">
+        </div>
+
+        <div class="tips-grid">
+            <div class="tip-card warning">
+                <h4>👟 装备建议</h4>
+                <ul>
+                    <li><strong>鞋子：</strong>重庆山城爬坡多，穿舒适运动鞋</li>
+                    <li><strong>雨具：</strong>重庆天气变脸快，带晴雨伞</li>
+                </ul>
+            </div>
+            <div class="tip-card tips">
+                <h4>🪪 证件优惠</h4>
+                <ul>
+                    <li><strong>学生证：</strong>别忘了！</li>
+                    <li>动物园、人民大礼堂等学生半价</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <div class="footer-text">🌶️🐼 祝你在重庆玩得开心！</div>
+        <div class="footer-note">Chongqing Travel Guide · 优化版</div>
+    </div>
+</div>
+
+</body>
+</html>
